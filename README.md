@@ -27,7 +27,7 @@ After reviewing the data provided, I found those data quality issues that might 
 - Data accuracy is a big problem for records in **brands** file. It is caused by missing values in the key field ```brandCode```, a mismatch between ```category``` and ```categoryCode```, and some duplicates in ```name```, ```barcode```, and ```brandCode```.
 - The main part of the **receipt** file looks like a combination of two tables, one of which is used only to store information like ```rewardsReceiptStatus``` and have missing values for all other fields. For the **itemList** part, the two major problems are data validility and missing values for key fields. I think every record should have at least certain variables so the record are searchable and joinable. For now, only the ```partnerItemId``` field doesn't have missing values.
 
-
+Please refer to [FetchRewards.ipynb](FetchRewards.ipynb) for the analysis with codes.
 
 ## Fourth: Communicate with Stakeholders
 
