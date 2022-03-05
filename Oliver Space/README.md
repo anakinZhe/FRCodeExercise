@@ -28,6 +28,26 @@ A) Write a query to get the daily, rolling 30 day average order value (where ord
 
 B) Write a query to get average customer subscription value (where subscription value = total value of all orders in a customer's subscription), churn rate (where churn rate = churned subscriptions/all subscriptions), and average term by monthly cohort. 
 
+**Orders**	
+|FIELD|	DATA TYPE|	DESCRIPTION|	POSSIBLE VALUES|
+| --- | --- | --- | --- |
+|id	|INTEGER	|A unique identifier per order	|476, 1094, 259, etc|
+|user_id|	INTEGER|	A unique identifier per user	|45, 8, 329, etc|
+|created_at|	TIMESTAMP|	Date the customer placed an order on the website	|2020-07-27 6:33:56|
+|term|	INTEGER	|The length of a user's plan in months|	3, 6, 12, 18, 24|
+|payment_type|	STRING|	Describes a user’s chosen payment option – monthly over time, or upfront|	monthly OR upfront|
+|monthly_payment|	INTEGER|	Amount a user pays us on a monthly basis (before sales tax & discounts)|	455, 83, 289, 114, etc|
+|state|	STRING|	The status of the order|	active OR canceled|
+
+**Subscriptions**
+| FIELD      | DATA TYPE | DESCRIPTION                                                | POSSIBLE VALUES                                                         |
+|------------|-----------|------------------------------------------------------------|---------------------------------------------------------------------------------|
+| id         | STRING    | A unique identifier per subscription                       | e65fa29f-7fe6-495d-a4eb-8cf9dd40953d, 627eb7f4-8c8c-46a9-9429-ea2781e2dacd, etc |
+| order_id   | INTEGER   | A unique identifier per order                              | 476, 1094, 259, etc                                                             |
+| created_at | TIMESTAMP | Date the subscription was created – on the day of delivery | 2020-08-03                                                                      |
+| updated_at | TIMESTAMP | Date the subscription status was last updated              | 2020-12-03                                                                      |
+| state      | STRING    | The status of the subscription                             | active, churned, OR past_due                                                    |
+
 ## Oliver Subscriptions Data Analysis
 
 See below 6 months of raw data between September 2019 to Feb 2020
